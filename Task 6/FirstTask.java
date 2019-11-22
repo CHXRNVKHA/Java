@@ -83,5 +83,24 @@ public class FirstTask {
             return this.tireType;
         }
     }
-}
 
+    /**
+     * Wing
+     */
+    public class Wing extends PlaneModule {
+        int width;
+        Wing() {}
+        Wing(String condition, boolean isReady, int width) {
+            super(condition, isReady);
+            this.width = width;
+        }
+
+        void setWidth(int value) {
+            this.width = value;
+        }
+
+        int getWidth() {
+            return this.width;
+        }
+    }
+}
