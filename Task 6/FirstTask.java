@@ -44,6 +44,26 @@ public class FirstTask {
         }
     }
 
-   
+    /**
+     * Engine 
+    */
+    public class Engine extends PlaneModule {
+        int power;
+        Engine() {}
+        Engine(String condition, boolean isReady, int power) {
+            super(condition, isReady);
+            this.power = power;
+        }
+
+        void setPower(int value) {
+            this.power = value;
+        }
+
+        int getPower() {
+            return this.power;
+        }
+    }
+
+    
 }
 
