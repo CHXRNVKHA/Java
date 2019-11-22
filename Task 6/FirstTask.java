@@ -3,7 +3,7 @@
  */
 public class FirstTask {
     public static void main(String[] args) {
-        
+        Plane plane = new Plane();
     }
 
     /**
@@ -101,6 +101,69 @@ public class FirstTask {
 
         int getWidth() {
             return this.width;
+        }
+    }
+
+    /**
+     * Plane
+     */
+    class Plane {
+        String route;
+        Engine engine;
+        Chassis chassis;
+        boolean fly;
+        Wing wing;
+        Plane() {}
+        Plane(Engine engine, Chassis chassis, Wing wing, String route) {
+            this.engine = engine;
+            this.chassis = chassis;
+            this.wing = wing;
+            this.route = route;
+        }
+
+        void setWing(Wing value) {
+            this.wing = value;
+        }
+
+        Wing getWing() {
+            return this.wing;
+        }
+
+        void setEngine(Engine value) {
+            this.engine = value;
+        }
+
+        Engine getEngine() {
+            return this.engine;
+        }
+
+        void setChassis(Chassis value) {
+            this.chassis = value;
+        }
+
+        Chassis getChassis() {
+            return this.chassis;
+        }
+
+        void setRoute(String value) {
+            this.route = value;
+        }
+
+        String getRoute() {
+            return this.route;
+        }
+
+        void fly() {
+            if(this.engine.isReady && this.wing.isReady && this.chassis.isReady) {
+                this.fly = true;
+            }
+            else {
+                this.fly = false;
+            }
+        }
+
+        boolean isFly() {
+            return this.fly;
         }
     }
 }
