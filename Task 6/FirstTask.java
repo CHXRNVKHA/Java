@@ -7,8 +7,8 @@ public class FirstTask {
     }
 
     /**
-    * PlaneModule
-    */
+     * PlaneModule
+     */
     public class PlaneModule {
         String condition;
         boolean isReady;
@@ -46,7 +46,7 @@ public class FirstTask {
 
     /**
      * Engine 
-    */
+     */
     public class Engine extends PlaneModule {
         int power;
         Engine() {}
@@ -64,6 +64,24 @@ public class FirstTask {
         }
     }
 
-    
+    /**
+     * Chassis
+     */
+    public class Chassis extends PlaneModule {
+        String tireType;
+        Chassis() {}
+        Chassis(String condition, boolean isReady, String tireType) {
+            super(condition, isReady);
+            this.tireType = tireType;
+        }
+
+        void setTireType(String value) {
+            this.tireType = value;
+        }
+
+        String getTireType() {
+            return this.tireType;
+        }
+    }
 }
 
