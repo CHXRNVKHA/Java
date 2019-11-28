@@ -3,15 +3,21 @@
  */
 public class FirstTask {
     public static void main(String[] args) {
-        Plane plane = new Plane();
+        Engine engine = new Engine("good", true, 700);
+        Chassis chassis = new Chassis("good", true, "some type");
+        Wing wing = new Wing("good", true, 300);
+        Plane plane = new Plane(engine, chassis, wing, "Berlin");  
+        System.out.println(plane.isFly());
+        plane.fly();
+        System.out.println(plane.isFly());
     }
-
-    /**
+}
+ /**
      * PlaneModule
      */
-    public class PlaneModule {
-        String condition;
-        boolean isReady;
+    class PlaneModule {
+        protected String condition;
+        protected boolean isReady;
 
         PlaneModule() {}
 
@@ -47,8 +53,8 @@ public class FirstTask {
     /**
      * Engine 
      */
-    public class Engine extends PlaneModule {
-        int power;
+    class Engine extends PlaneModule {
+        private int power;
         Engine() {}
         Engine(String condition, boolean isReady, int power) {
             super(condition, isReady);
@@ -67,8 +73,8 @@ public class FirstTask {
     /**
      * Chassis
      */
-    public class Chassis extends PlaneModule {
-        String tireType;
+    class Chassis extends PlaneModule {
+        private String tireType;
         Chassis() {}
         Chassis(String condition, boolean isReady, String tireType) {
             super(condition, isReady);
@@ -87,8 +93,8 @@ public class FirstTask {
     /**
      * Wing
      */
-    public class Wing extends PlaneModule {
-        int width;
+    class Wing extends PlaneModule {
+        private int width;
         Wing() {}
         Wing(String condition, boolean isReady, int width) {
             super(condition, isReady);
@@ -108,11 +114,11 @@ public class FirstTask {
      * Plane
      */
     class Plane {
-        String route;
-        Engine engine;
-        Chassis chassis;
-        boolean fly;
-        Wing wing;
+        private String route;
+        private Engine engine;
+        private Chassis chassis;
+        private boolean fly;
+        private Wing wing;
         Plane() {}
         Plane(Engine engine, Chassis chassis, Wing wing, String route) {
             this.engine = engine;
@@ -166,4 +172,3 @@ public class FirstTask {
             return this.fly;
         }
     }
-}
