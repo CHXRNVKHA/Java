@@ -195,21 +195,21 @@ class HomeElectricalApp {
     }
 
     void turnOn() {
-        if (on) { 
+        if (this.on) { 
             System.out.println("it is already on!");
         }
         else this.on = true;
     } 
 
     void turnOff() {
-        if (!on) { 
+        if (!this.on) { 
             System.out.println("it is already off!");
         }
         else this.on = false;
     }   
     
     boolean isOn() {
-        if (on) return true;
+        if (this.on) return true;
         return false;
     }
 }
