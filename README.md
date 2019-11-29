@@ -1,2 +1,2 @@
 # This repo contains implemented tasks on the discipline OOTPiSP
-## Each part of some task implement in the separate file
+## Each part of some tasks implement in the separate file
