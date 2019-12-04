@@ -45,3 +45,15 @@ class Gun {
         }
     }
 }
+
+/**
+ * Rifle
+ */
+class Rifle extends Gun {
+    String type;
+    String name;
+    Rifle(int clipCapacity, String name) {
+        super(clipCapacity);
+        this.name = name;
+    }
+}
